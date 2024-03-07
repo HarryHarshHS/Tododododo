@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { v4 as uuidv4 } from "uuid";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { FaSave } from "react-icons/fa";
 
 function App() {
   const [todo, setTodo] = useState("");
@@ -69,23 +72,23 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container p-10">
-        <div className="bg-orange-200  p-5 font-serif rounded-xl min-h-[80vh]">
+      <div className=" flex justify-center ">
+        <div className="bg-orange-200 mt-4 p-5 font-serif w-[100vw] md:w-[75vw] rounded-xl min-h-[80vh]">
           <div className="flex gap-2 my-4 flex-col ">
             <span className="font-bold font-serif text-2xl">Add a Todo</span>
-            <div>
+            <div className="flex items-center">
               <input
                 value={todo}
                 onChange={handleChange}
-                className="w-80"
+                className="w-80 h-8"
                 type="text"
               />
               <button
                 onClick={handleAdd}
                 disabled={todo.length < 3}
-                className="rounded-lg bg-orange-700 disabled:bg-orange-300 sabled:bg text-white text-sm mx-2 p-1"
+                className="rounded-lg bg-orange-700 disabled:bg-orange-300 sabled:bg text-white text-xl mx-2  p-2"
               >
-                ADD
+                <FaSave />
               </button>
             </div>
           </div>
@@ -107,7 +110,7 @@ function App() {
                     key={item.id}
                     className="todo flex  items-center  border-2 border-orange-300 p-4 justify-between"
                   >
-                    <div>
+                    <div className=" md:w-[90%]">
                       <input
                         name={item.id}
                         onChange={(e) => {
@@ -117,26 +120,26 @@ function App() {
                         checked={item.isCompleted}
                       />
 
-                      <div className={item.isCompleted ? "line-through" : ""}>
+                      <div className={item.isCompleted ? "line-through my-1 w-[110%] md:w-[100%]" : " my-1 w-[110%] md:w-[100%]"}>
                         {item.todo}
                       </div>
                     </div>
-                    <div className="button">
+                    <div className="button self-baseline  top-0 w-[10%] flex justify-end items-start">
                       <button
                         onClick={() => {
                           handleEdit(item.id);
                         }}
-                        className="rounded-lg bg-orange-700 text-white text-xs p-1 m-1 hover:bg-orange-800"
+                        className="rounded-lg bg-orange-700 text-white text-xl p-1 px-2  m-1  hover:bg-orange-800"
                       >
-                        Edit
+                        <FaRegEdit />
                       </button>
                       <button
                         onClick={() => {
                           handleDelete(item.id);
                         }}
-                        className="rounded-lg bg-orange-700 text-white text-xs p-1 m-1 hover:bg-orange-800"
+                        className="rounded-lg bg-orange-700 text-white text-xl p-1 px-2 m-1 hover:bg-orange-800"
                       >
-                        Delete
+                        <MdDelete />
                       </button>
                     </div>
                   </div>
@@ -151,3 +154,6 @@ function App() {
 }
 
 export default App;
+
+
+
