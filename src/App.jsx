@@ -73,7 +73,7 @@ function App() {
     <>
       <Navbar />
       <div className=" flex justify-center ">
-        <div className="bg-orange-200 mt-4 p-5 font-serif w-[100vw] md:w-[75vw] rounded-xl min-h-[80vh]">
+        <div className="bg-orange-200 md:mt-4 p-5 font-serif w-[100vw] md:w-[75vw] rounded-xl md:min-h-[80vh] min-h-[90vh]">
           <div className="flex gap-2 my-4 flex-col ">
             <span className="font-bold font-serif text-2xl">Add a Todo</span>
             <div className="flex items-center">
