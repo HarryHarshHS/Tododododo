@@ -73,7 +73,7 @@ function App() {
     <>
       <Navbar />
       <div className=" flex justify-center ">
-        <div className="bg-orange-200 md:mt-4 p-5 font-serif w-[100vw] md:w-[75vw] rounded-xl md:min-h-[80vh] min-h-[90vh]">
+        <div className="box md:mt-4 p-5 font-serif w-[100vw] md:w-[75vw] rounded-xl md:min-h-[80vh] min-h-[90vh]">
           <div className="flex gap-2 my-4 flex-col ">
             <span className="font-bold font-serif text-2xl">Add a Todo</span>
             <div className="flex items-center">
@@ -108,7 +108,7 @@ function App() {
                 (showFinished || !item.isCompleted) && (
                   <div
                     key={item.id}
-                    className="todo flex  items-center  border-2 border-orange-300 p-4 justify-between"
+                    className="todo flex  items-center  border-2 border-orange-400 m-2 rounded-lg p-4 justify-between"
                   >
                     <div className=" md:w-[90%]">
                       <input
